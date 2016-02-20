@@ -1,6 +1,6 @@
 #ifndef COORD_SYSTEM_H
 #define COORD_SYSTEM_H
-#include "../Vector/VectorF.h"
+#include "VectorF.h"
 
 /// 3D Coord System
 class SphericalCoordf
