@@ -1,6 +1,49 @@
 #ifndef COORD_SYSTEM_H
 #define COORD_SYSTEM_H
-#include "VectorF.h"
+
+class PolarCoord
+{
+public:
+    float r,alfa;
+	PolarCoord();
+	PolarCoord(float,float);
+	PolarCoord(PolarCoord&);
+
+	inline float GetR();
+	inline float GetAlfa();
+
+	inline void SetR(float);
+	inline void SetAlfa(float);
+
+	///Cartesian Coord
+	inline float GetX();
+	inline float GetY();
+	Vector2f GetXY();
+};
+
+
+class CylindricalCoord
+{
+public:
+	float r,alfa,z;
+	CylindricalCoord();
+	CylindricalCoord(float,float,float);
+	CylindricalCoord(CylindricalCoord&);
+
+	inline float GetR();
+	inline float GetAlfa();
+	inline float GetZ();
+	inline void SetR(float);
+	inline void SetAlfa(float);
+	inline void SetZ(float);
+
+	///Cartesian Coord
+	float GetX();
+	float GetY();
+	Vector3f GetXYZ();
+};
+
+
 
 /// 3D Coord System
 class SphericalCoordf
@@ -36,15 +79,15 @@ public:
 	inline double GetR();
     inline double GetAlfa();
 	inline double GetBeta();
-	inline void SetR();
-	inline void SetAlfa();
-	inline void SetBeta();
+	inline void SetR(double);
+	inline void SetAlfa(double);
+	inline void SetBeta(double);
 
 	///Cartesian Coord
     double GetX();
     double GetY();
     double GetZ();
-    /// VECTOR3D
+    Vector3f GetXYZ();
 };
 
 
