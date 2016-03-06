@@ -1,6 +1,8 @@
 #ifndef COORD_SYSTEM_H
 #define COORD_SYSTEM_H
+#include "../Vector/VectorD.h"
 #include "../Vector/VectorF.h"
+
 
 ///2D coord - 2*Floats
 class PolarCoord
@@ -14,17 +16,15 @@ public:
 	PolarCoord(float,float);
 	PolarCoord(PolarCoord&);
 
-	inline float GetR();
-	inline float GetAlfa();
-
 	inline void Set(PolarCoord&);
-	inline void SetR(float);
-	inline void SetAlfa(float);
+	inline void Set(float,float);
 
 	///Cartesian Coord
 	inline float GetX();
 	inline float GetY();
 	Vector2f GetXY();
+
+	void Display(std::ostream &out) { out<<"r: "<<r<<"\nangle: "<<alfa<<"\n"; }
 };
 
 /// 3D Coord System - 3*Floats
@@ -42,19 +42,15 @@ public:
 	CylindricalCoord(float,float,float);
 	CylindricalCoord(CylindricalCoord&);
 
-	inline float GetR();
-	inline float GetAlfa();
 	inline void Set(CylindricalCoord&);
-	inline void SetR(float);
-	inline void SetAlfa(float);
-	inline void SetZ(float);
+	inline void Set(float,float,float);
 
 	///Cartesian Coord
-
 	float GetX();
 	float GetY();
 	float GetZ();
 	Vector3f GetXYZ();
+	void Display(std::ostream &out) { out<<"r: "<<r<<"\nangle: "<<alfa<<"\nz: "<<z<<"\n"; }
 };
 
 
@@ -74,14 +70,8 @@ public:
 	SphericalCoordf(float,float,float);
 	SphericalCoordf(SphericalCoordf&);
 
-	inline float GetR();
-	inline float GetAlfa();
-	inline float GetBeta();
-
 	inline void Set(SphericalCoordf&);
-	inline void SetR(float);
-	inline void SetAlfa(float);
-	inline void SetBeta(float);
+	inline void Set(float,float,float);
 
 	///Cartesian Coord
 
@@ -89,6 +79,7 @@ public:
 	float GetY();
 	float GetZ();
 	Vector3f GetXYZ();
+	void Display(std::ostream &out) { out<<"r: "<<r<<"\nangle: "<<alfa<<"\nbeta: "<<beta<<"\n"; }
 };
 
 /// 3D Coord System - 3*Double
@@ -106,25 +97,15 @@ public:
 	SphericalCoordd(double,double,double);
 	SphericalCoordd(SphericalCoordd&);
 
-	inline double GetR();
-    inline double GetAlfa();
-	inline double GetBeta();
-
 	inline void Set(SphericalCoordd&);
-	inline void SetR(double);
-	inline void SetAlfa(double);
-	inline void SetBeta(double);
-
+	inline void Set(double,double,double);
 	///Cartesian Coord
 
     double GetX();
     double GetY();
     double GetZ();
     ///Vector3d GetXYZ();
-};
-
-
-#endif
+    void Display(std::ostream &out) { out<<"r: "<<r<<"\nangle: "<<alfa<<"\nbeta: "<<beta<<"\n"; }
 };
 
 
