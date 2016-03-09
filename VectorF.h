@@ -13,6 +13,7 @@ public:
 	Vector2f(const Vector2f&);
 	void Set(float,float);
 	void Set(Vector2f&);
+	Vector2f GetFormat(uint16_t);
 	float Lenght();
 	void Normalize();
 	void Display(std::ostream&);
@@ -37,6 +38,8 @@ public:
     Vector3f(const Vector3f&);
     void Set(float,float,float);
     void Set(Vector3f&);
+    Vector2f GetFormat(uint16_t);
+    Vector3f GetFormat(uint8_t);
     float Lenght();
     void Normalize();
     void Display(std::ostream&);
@@ -64,6 +67,8 @@ public:
     Vector4f(const Vector4f&);
     void Set(float,float,float,float);
     void Set(Vector4f&);
+    Vector2f GetFormat(uint16_t);
+    Vector3f GetFormat(uint8_t);
     float Lenght();
     void Normalize();
     void Display(std::ostream&);
