@@ -37,6 +37,7 @@ Vector2f Vector2f::operator+(Vector2f _Vector2f) { _Vector2f.x+=x; _Vector2f.y+=
 void Vector2f::operator+=(const Vector2f& _Vector2f) { x+=_Vector2f.x; y+=_Vector2f.y;}
 
 Vector2f Vector2f::operator-(Vector2f _Vector2f) { _Vector2f.x-=x; _Vector2f.y-=y; return _Vector2f; }
+Vector2f Vector2f::operator-() { return Vector2f(-x,-y); }
 void Vector2f::operator-=(const Vector2f& _Vector2f) { x-=_Vector2f.x; y-=_Vector2f.y; }
 
 Vector2f Vector2f::operator*(Vector2f _Vector2f) { _Vector2f.x*=x; _Vector2f.y*=y; return _Vector2f; }
@@ -125,7 +126,10 @@ Vector3f Vector3f::GetFormat(uint8_t ch)
 float Vector3f::Lenght() { return sqrt(x*x+y*y+z*z);}
 void Vector3f::Normalize() { float lenght=sqrt(x*x+y*y+z*z); x=x/lenght; y=y/lenght; z=z/lenght; }
 void Vector3f::Display(std::ostream& out) { out<<"x: "<<x<<"\ny: "<<y<<"\nz: "<<z<<"\n"; }
-
+Vector3f Vector3f::operator-()
+{
+    return Vector3f(-x,-y,-z);
+}
 Vector3f& Vector3f::operator=(const Vector3f& _Vector3f) { x=_Vector3f.x; y=_Vector3f.y; z=_Vector3f.z; return *this; }
 
 bool Vector3f::operator==(const Vector3f& _Vector3f) { return (x==_Vector3f.x and y==_Vector3f.y and z==_Vector3f.z); }
@@ -323,6 +327,7 @@ Vector4f Vector4f::operator+(Vector4f _Vector4f) { _Vector4f.x+=x; _Vector4f.y+=
 void Vector4f::operator+=(const Vector4f& _Vector4f) { x+=_Vector4f.x; y+=_Vector4f.y; z+=_Vector4f.z; w+=_Vector4f.w; }
 
 Vector4f Vector4f::operator-(Vector4f _Vector4f) { _Vector4f.x-=x; _Vector4f.y-=y; _Vector4f.z-=z; _Vector4f.w-=w; return _Vector4f; }
+Vector4f Vector4f::operator-() { return Vector4f(-x,-y,-z,-w); }
 void Vector4f::operator-=(const Vector4f& _Vector4f) { x-=_Vector4f.x; y-=_Vector4f.y; z-=_Vector4f.z; w-=_Vector4f.w; }
 
 Vector4f Vector4f::operator*(Vector4f _Vector4f) { _Vector4f.x*=x; _Vector4f.y*=y; _Vector4f.z*=z; _Vector4f.w*=w; return _Vector4f; }

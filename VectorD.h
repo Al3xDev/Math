@@ -12,6 +12,7 @@ public:
     Vector3d(const Vector3d&);
     void Set(double,double,double);
     void Set(Vector3d&);
+    Vector3d GetFormat(uint8_t);
     double Lenght();
     void Normalize();
     void Display(std::ostream&);
@@ -20,6 +21,7 @@ public:
     Vector3d operator+(Vector3d);
     void operator+=(const Vector3d&);
     Vector3d operator-(Vector3d);
+    Vector3d operator-();
     void operator-=(const Vector3d&);
     Vector3d operator*(Vector3d);
     Vector3d operator*(double);

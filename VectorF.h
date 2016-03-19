@@ -22,6 +22,7 @@ public:
 	Vector2f operator+(Vector2f);
 	void operator+=(const Vector2f&);
 	Vector2f operator-(Vector2f);
+	Vector2f operator-();
 	void operator-=(const Vector2f&);
 	Vector2f operator*(Vector2f);
 	Vector2f operator*(float);
@@ -45,10 +46,10 @@ public:
     void Display(std::ostream&);
     bool operator==(const Vector3f&);
     Vector3f& operator=(const Vector3f&);
-    Vector3f operator=(Vector3f);
     Vector3f operator+(Vector3f);
     void operator+=(const Vector3f&);
     Vector3f operator-(Vector3f);
+    Vector3f operator-();
     void operator-=(const Vector3f&);
     Vector3f operator*(Vector3f);
     Vector3f operator*(float);
@@ -77,6 +78,7 @@ public:
     Vector4f operator+(Vector4f);
     void operator+=(const Vector4f&);
     Vector4f operator-(Vector4f);
+    Vector4f operator-();
     void operator-=(const Vector4f&);
     Vector4f operator*(Vector4f);
     Vector4f operator*(float);

@@ -147,13 +147,13 @@ double SphericalCoordd::GetZ()
 	return cos(beta)*r;
 }
 
-/*Vector3d SphericalCoordd::GetXYZ()
+Vector3d SphericalCoordd::GetXYZ()
 {
 	Vector3d temp;
 	temp.x=sin(beta)*cos(alfa)*r;
 	temp.y=sin(beta)*sin(alfa)*r;
 	temp.z=cos(beta)*r;
 	return temp;
-}*/
+}
 
 

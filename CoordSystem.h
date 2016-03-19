@@ -104,7 +104,7 @@ public:
     double GetX();
     double GetY();
     double GetZ();
-    ///Vector3d GetXYZ();
+    Vector3d GetXYZ();
     void Display(std::ostream &out) { out<<"r: "<<r<<"\nangle: "<<alfa<<"\nbeta: "<<beta<<"\n"; }
 };
 
