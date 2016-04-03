@@ -158,6 +158,7 @@ bool AreCollinner(Vector3f v1, Vector3f v2)
     return (v1.x/v2.x==v1v2_yr and v1.z/v2.z==v1v2_yr) ? true : false;
 }
 
+/// w isn't use at AreCollinnerV4XYZ
 bool AreCollinnerV4XYZ(Vector4f v1, Vector4f v2)
 {
     float v1v2_yr=v1.y/v2.y;
@@ -166,17 +167,18 @@ bool AreCollinnerV4XYZ(Vector4f v1, Vector4f v2)
 
 bool AreOrthogonal(Vector2f v1, Vector2f v2)
 {
-    return (v1.x*v2.x+v1.y*v2.y)/(sqrt(v1.x*v1.x+v1.y*v1.y)*sqrt(v2.x*v2.x+v2.y*v2.y)) ? false : true;
+    return (v1.x*v2.x+v1.y*v2.y)==0 ? true : false;
 }
 
 bool AreOrthogonal(Vector3f v1, Vector3f v2)
 {
-    return (v1.x*v2.x+v1.y*v2.y +v1.z*v2.z)/(sqrt(v1.x*v1.x+v1.y*v1.y+v1.z*v1.z)*sqrt(v2.x*v2.x+v2.y*v2.y+v2.z*v2.z)) ? false : true;
+    return (v1.x*v2.x+v1.y*v2.y +v1.z*v2.z)==0 ? true : false;
 }
 
+/// w isn't use at AreOrthogonalV4XYZ
 bool AreOrthogonalV4XYZ(Vector4f v1, Vector4f v2)
 {
-    return (v1.x*v2.x+v1.y*v2.y +v1.z*v2.z)/(sqrt(v1.x*v1.x+v1.y*v1.y+v1.z*v1.z)*sqrt(v2.x*v2.x+v2.y*v2.y+v2.z*v2.z)) ? false : true;
+    return (v1.x*v2.x+v1.y*v2.y +v1.z*v2.z)==0 ? true : false;
 }
 
 bool IsNull(Vector2f v)
@@ -189,6 +191,7 @@ bool IsNull(Vector3f v)
     return v.x==0 and v.y==0 and v.z==0 ? true : false;
 }
 
+/// w isn't use at IsNullV4XYZ
 bool IsNullV4XYZ(Vector4f v)
 {
     return v.x==0 and v.y==0 and v.z==0 ? true : false;
@@ -204,9 +207,24 @@ bool IsNormalized(Vector3f v)
     return sqrt(v.x*v.x+v.y*v.y+v.z*v.z)==1 ? true : false;
 }
 
+/// w isn't use at IsNormalizedV4XYZ
 bool IsNormalizedV4XYZ(Vector4f v)
 {
     return sqrt(v.x*v.x+v.y*v.y+v.z*v.z)==1 ? true : false;
 }
 
+bool AreOrthonormal(Vector2f v1, Vector2f v2)
+{
+    return  v1.x*v2.x+v1.y*v2.y==0 and sqrt(v2.x*v2.x+v2.y*v2.y)==1 and sqrt(v1.x*v1.x+v1.y*v1.y)==1 ? true : false ;
+}
 
+bool AreOrthonormal(Vector3f v1, Vector3f v2)
+{
+    return  v1.x*v2.x+v1.y*v2.y+v1.z*v2.z==0 and sqrt(v2.x*v2.x+v2.y*v2.y+v2.z*v2.z)==1 and sqrt(v1.x*v1.x+v1.y*v1.y+v1.z*v1.z)==1 ? true : false ;
+}
+
+/// w isn't use at AreOrthonormalV4XYZ
+bool AreOrthonormalV4XYZ(Vector4f v1, Vector4f v2)
+{
+    return  v1.x*v2.x+v1.y*v2.y+v1.z*v2.z==0 and sqrt(v2.x*v2.x+v2.y*v2.y+v2.z*v2.z)==1 and sqrt(v1.x*v1.x+v1.y*v1.y+v1.z*v1.z)==1 ? true : false ;
+}
