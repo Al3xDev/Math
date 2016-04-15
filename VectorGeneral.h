@@ -4,6 +4,8 @@
 #include "VectorF.h"
 #include "VectorD.h"
 
+Vector3f TriangleNormal(Vector3f, Vector3f, Vector3f);
+
 float Distance(Vector2f v1, Vector2f v2)
 {
     return sqrt((v1.x-v2.x)*(v1.x-v2.x)+(v1.y-v2.y)*(v1.y-v2.y));
